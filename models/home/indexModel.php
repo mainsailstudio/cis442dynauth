@@ -8,7 +8,7 @@ use db;
 class index {
 
     public function getDBstuff() {
-        $sql = "select test from test";
+        $sql = "select fname from customer";
         $pdo = db::getPDO();
         $r = false;
         if ($con = $pdo->prepare($sql)) {
@@ -19,5 +19,3 @@ class index {
     }
 
 }
-
-
