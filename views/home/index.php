@@ -8,7 +8,6 @@
                 }
             }
             ?>
-            <p>TEST GITHUB COMMIT</p>
         </div>
     </div>
 </div>
