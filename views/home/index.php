@@ -4,7 +4,7 @@
             <?php
             if (is_array($viewbag['ourVar'])) {
                 foreach ($viewbag['ourVar'] as $item) {
-                    echo $item['test'];
+                    echo $item['fname'];
                 }
             }
             ?>
