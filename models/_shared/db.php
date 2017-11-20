@@ -6,14 +6,14 @@ class db {
 	*  To prevent confusion, I am keeping this on intact until we don't need it anymore.
 	*/
     public static function getPDO() {
-        $pdo = new PDO("mysql:host=localhost;dbname=mainsai6_cis442-dynauth", 'mainsai6_cis442', 'Cis442Dynu&thCESQ');
+        $pdo = new PDO("mysql:host=localhost;dbname=customer", 'root', 'Cis442Dynu&thCESQ');
         /* Uses actual mysql prepared statement instead of emulating them. */
         $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         /* If PDO errors out, throw an exception so we can see it */
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
-	
+
 	/* Edit by Connor Peters 11/4/2017
 	*  getCustomerDB to connect to the customer database that contains basic customer information
 	*/
@@ -63,7 +63,7 @@ class db {
 
         return $paragraphs;
     }
-    
+
     public static function commaInt($string) {
         $numComOnly = preg_replace('/[^0-9,]/', '', $string);
         $noStartEndCom =  preg_replace('/^,+|,+$/', '', $numComOnly);
