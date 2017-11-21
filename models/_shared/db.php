@@ -19,20 +19,7 @@ class db {
   * written by Connor 11/21/2017
   */
     public static function getMysqli($query){
-      $db = mysqli_connect("172.31.40.83", "root", "Cis442Dynu&thCESQ", "customer");
-      // for debugging
-      /* check connection */
-      if ($db->connect_errno) {
-          printf("Connect failed: %s\n", $db->connect_error);
-          exit();
-      }
-
-      /* check if server is alive */
-      if ($db->ping()) {
-          printf ("Our connection is ok!\n");
-      } else {
-          printf ("Error: %s\n", $mysqli->error);
-      }
+      $db = mysqli_connect("172.31.40.83", "root@localhost", "Cis442Dynu&thCESQ", "customer");
 
       if (!$db) {
         print "Error - Could not connect to MySQL via myqli_connect<br />";
