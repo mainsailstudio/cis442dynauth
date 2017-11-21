@@ -7,7 +7,18 @@
                     echo $item['fname'];
                 }
             }
+            print "<hr /><br /><hr />";
+            if (is_array($viewbag['testMysqli'])) {
+                foreach ($viewbag['testMysqli'] as $item) {
+                    echo $item['fname'];
+                }
+            }
             ?>
+            <div class="demo">
+              <?php
+
+               ?>
+            </div><!-- end of Connor's demo code -->
         </div>
     </div>
 </div>

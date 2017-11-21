@@ -14,6 +14,36 @@ class db {
         return $pdo;
     }
 
+
+  /* New mysqli function to connect to databases
+  * written by Connor 11/21/2017
+  */
+    public static function getMysqli($query){
+      $db = mysqli_connect("locahost", "root", "Cis442Dynu&thCESQ", "customer");
+
+      if (!$db) {
+        print "Error - Could not connect to MySQL via myqli_connect";
+        exit;
+     }
+
+       trim($query);
+       $query = stripslashes($query);
+       $result = mysqli_query($db, $query);
+
+       if (!$result) {
+        print "Error - the query could not be executed";
+        $error = mysqli_error();
+        print "<p>" . $error . "</p>";
+        exit;
+      }
+
+      return $result;
+        /*
+        *   To use:
+        *   $row = mysqli_fetch_assoc($result);
+        */
+    } //  end of resultMysqli
+
 	/* Edit by Connor Peters 11/4/2017
 	*  getCustomerDB to connect to the customer database that contains basic customer information
 	*/

@@ -18,4 +18,15 @@ class index {
         return $r;
     }
 
+    public function getMysqliStuff(){
+      $query = "select fname from customer";
+      $result = getMysqli($query);
+      return $result;
+    }
+
+    public function dynauthDemo(){
+      
+
+    } // end of dynauth demo
+
 }
