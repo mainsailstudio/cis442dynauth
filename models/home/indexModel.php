@@ -20,12 +20,12 @@ class index {
 
     public function getMysqliStuff(){
       $query = "select fname from customer";
-      $result = getMysqli($query);
+      $result = db::getMysqli($query);
       return $result;
     }
 
     public function dynauthDemo(){
-      
+
 
     } // end of dynauth demo
 
