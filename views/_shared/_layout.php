@@ -51,6 +51,8 @@
         <script src="<?= __relpath__ ?>/public/vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?= __relpath__ ?>/public/js/connor.js" type="text/javascript"></script>
         <script src="<?= __relpath__ ?>/public/js/evan.js" type="text/javascript"></script>
+        <!-- Are you having a hard day fixing code? 
+        On any page this is included press [up, down, left, right, enter].  -->
         <script src="<?= __relpath__ ?>/public/js/quinton.js" type="text/javascript"></script>
         <script src="<?= __relpath__ ?>/public/js/sam.js" type="text/javascript"></script>
         <?php
