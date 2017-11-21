@@ -4,10 +4,14 @@
             <?php
             if (is_array($viewbag['ourVar'])) {
                 foreach ($viewbag['ourVar'] as $item) {
-                    echo $item['email'];
+                    echo $item['fname'];
                 }
             }
             ?>
+            <div class="demo">
+              <?php
+               ?>
+            </div><!-- end of Connor's demo code -->
         </div>
     </div>
 </div>

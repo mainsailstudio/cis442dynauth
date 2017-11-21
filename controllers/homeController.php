@@ -32,6 +32,7 @@ class home {
     public function index() {
         $index = new \home\index();
         $r = $index->getDBstuff();
+        $mysqli =$index->dynauthDemo();
         return [
             'ourVar' => $r
         ];
@@ -54,11 +55,11 @@ class home {
     }
 
     public function test() {
-        
+
     }
 
     public function about() {
-        
+
     }
 
     public function dashboard() {

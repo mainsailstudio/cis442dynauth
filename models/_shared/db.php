@@ -13,7 +13,37 @@ class db {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
-	
+
+
+  /* New mysqli function to connect to databases
+  * written by Connor 11/21/2017
+  */
+    public static function getMysqli($query, $database){
+      $db = mysqli_connect("127.0.0.1", "root", "Cis442Dynu&thCESQ", "$database");
+
+      if (!$db) {
+        print "Error - Could not connect to MySQL via myqli_connect<br />";
+        exit;
+     }
+
+       trim($query);
+       $query = stripslashes($query);
+       $result = mysqli_query($db, $query);
+
+       if (!$result) {
+        print "Error - the query could not be executed";
+        $error = mysqli_error();
+        print "<p>" . $error . "</p>";
+        exit;
+      }
+      $row=mysqli_fetch_array($result,MYSQLI_ASSOC); 
+      return $row;
+        /*
+        *   To use:
+        *   $row = mysqli_fetch_assoc($result);
+        */
+    } //  end of resultMysqli
+
 	/* Edit by Connor Peters 11/4/2017
 	*  getCustomerDB to connect to the customer database that contains basic customer information
 	*/
@@ -63,7 +93,7 @@ class db {
 
         return $paragraphs;
     }
-    
+
     public static function commaInt($string) {
         $numComOnly = preg_replace('/[^0-9,]/', '', $string);
         $noStartEndCom =  preg_replace('/^,+|,+$/', '', $numComOnly);
