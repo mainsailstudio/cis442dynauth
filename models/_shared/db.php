@@ -36,7 +36,7 @@ class db {
         print "<p>" . $error . "</p>";
         exit;
       }
-      $row = mysqli_fetch_assoc($result);
+      $row=mysqli_fetch_array($result,MYSQLI_ASSOC); 
       return $row;
         /*
         *   To use:
