@@ -10,7 +10,7 @@
 /*this makes the footer black with white text and have a minor dropshadow effect
 to make it look like it is behind the main content on the screen*/
 footer {
-    padding-top: 50px;
+    padding: 50px 0;
     color:#eee;
     box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.7);;
 }
@@ -23,7 +23,7 @@ body{
 }
 /*this makes the content on white*/
 .body-wrapper-class{
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: white;
 }
 /*nessisary to make the default bootstrap navbar work with a black background*/
