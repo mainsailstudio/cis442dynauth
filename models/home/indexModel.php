@@ -18,16 +18,11 @@ class index {
         return $r;
     }
 
-    public function getMysqliStuff(){
-      $query = "select fname from customer";
-      $database = "customer";
+    public function dynauthDemo(){
+      $query = "select * from demo";
+      $database = "website";
       $result = db::getMysqli($query, $database);
       return $result;
-    }
-
-    public function dynauthDemo(){
-
-
     } // end of dynauth demo
 
 }

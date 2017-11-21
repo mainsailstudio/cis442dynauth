@@ -7,14 +7,12 @@
                     echo $item['fname'];
                 }
             }
-            print "<hr /><br /><hr />";
-            if (is_array($viewbag['testMysqli'])) {
-                echo ($viewbag['testMysqli']['fname']);
-            }
             ?>
             <div class="demo">
               <?php
-
+              if (is_array($viewbag['demo'])) {
+                  print_r ($viewbag['demo']);
+              }
                ?>
             </div><!-- end of Connor's demo code -->
         </div>
