@@ -17,12 +17,14 @@ class index {
         }
         return $r;
     }
-
+    /* This function recieves the ajax call for the demo */
     public function dynauthDemo(){
-      $query = "select * from demo";
+      
+
+      /* $query = "select * from demo";
       $database = "website";
       $result = db::getMysqli($query, $database);
-      return $result;
+      return $result; */
     } // end of dynauth demo
 
 }

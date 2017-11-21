@@ -34,8 +34,7 @@ class home {
         $r = $index->getDBstuff();
         $mysqli =$index->dynauthDemo();
         return [
-            'ourVar' => $r,
-            'demo' => $mysqli
+            'ourVar' => $r
         ];
     }
 
