@@ -36,8 +36,8 @@ class db {
         print "<p>" . $error . "</p>";
         exit;
       }
-
-      return $result;
+      $row = mysqli_fetch_assoc($result);
+      return $row;
         /*
         *   To use:
         *   $row = mysqli_fetch_assoc($result);
