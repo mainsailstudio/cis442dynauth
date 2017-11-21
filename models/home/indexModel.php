@@ -20,8 +20,8 @@ class index {
 
     public function getMysqliStuff(){
       $query = "select fname from customer";
-      $database = "customer";
-      $result = db::getMysqli($query, $database);
+      $database = "customer"; //not used currently but asssumed in db.php
+      $result = db::getMysqli($query);
       return $result;
     }
 
