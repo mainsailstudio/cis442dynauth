@@ -11,7 +11,11 @@
         <title><?= empty($viewbag['page_title']) ? 'Test' : $viewbag['page_title'] ?></title>
 
         <link href="<?= __relpath__ ?>/public/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="/public/css/custom.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= __relpath__ ?>/public/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= __relpath__ ?>/public/css/connor.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= __relpath__ ?>/public/css/evan.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= __relpath__ ?>/public/css/quinton.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= __relpath__ ?>/public/css/sam.css" rel="stylesheet" type="text/css"/>
         <?php
         if (!empty($viewbag['page_css']) && is_array($viewbag['page_css'])) {
             foreach ($viewbag['page_css'] as $css) {
@@ -43,9 +47,12 @@
         </nav>
 
         <?php require __ecom__ . "$viewbag[page_path]"; ?>
-
         <script src="<?= __relpath__ ?>/public/vendors/jquery/jquery.min.js" type="text/javascript"></script>
         <script src="<?= __relpath__ ?>/public/vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/js/connor.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/js/evan.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/js/quinton.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/js/sam.js" type="text/javascript"></script>
         <?php
         if (!empty($viewbag) && !empty($viewbag['page_scripts']) && is_array($viewbag['page_scripts'])) {
             foreach ($viewbag['page_scripts'] as $script) {
