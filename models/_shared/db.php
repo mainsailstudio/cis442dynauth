@@ -19,7 +19,7 @@ class db {
   * written by Connor 11/21/2017
   */
     public static function getMysqli($query){
-      $db = mysqli_connect("172.31.40.83", "root", "Cis442Dynu&thCESQ", "customer");
+      $db = mysqli_connect("172.31.40.83:3307", "root", "Cis442Dynu&thCESQ", "customer");
 
       if (!$db) {
         print "Error - Could not connect to MySQL via myqli_connect";
