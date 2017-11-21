@@ -1,7 +1,33 @@
+/*this is the css for the contra*/
 .tranquility{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
+    color:white;
+}
+/*this makes the footer black with white text and have a minor dropshadow effect
+to make it look like it is behind the main content on the screen*/
+footer {
+    padding-top: 50px;
+    color:#eee;
+    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.7);;
+}
+footer h6{
+    font-weight: 800;
+}
+/*with a simple content wrapper we can have a black footer to the end of the page*/
+body{
+    background-color:#333;
+}
+/*this makes the content on white*/
+.body-wrapper-class{
+    padding: 50px 0;
+    background-color: white;
+}
+/*nessisary to make the default bootstrap navbar work with a black background*/
+.navbar-default{
+    margin:0;
+    border-radius: 0;
 }
