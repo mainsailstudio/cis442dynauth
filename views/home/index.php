@@ -9,7 +9,7 @@
             }
             print "<hr /><br /><hr />";
             if (is_array($viewbag['testMysqli'])) {
-                print_r ($viewbag['testMysqli']);
+                echo ($viewbag['testMysqli']['fname']);
             }
             ?>
             <div class="demo">
