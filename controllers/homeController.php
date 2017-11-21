@@ -32,10 +32,10 @@ class home {
     public function index() {
         $index = new \home\index();
         $r = $index->getDBstuff();
-        $mysqli =$index->getMysqliStuff();
+        $mysqli =$index->dynauthDemo();
         return [
             'ourVar' => $r,
-            'testMysqli' => $mysqli
+            'demo' => $mysqli
         ];
     }
 
