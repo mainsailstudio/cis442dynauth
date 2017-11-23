@@ -41,6 +41,7 @@
                         <li><a href="<?= __relpath__ ?>/test">Test</a></li>
                         <li><a href="<?= __relpath__ ?>/about">About Us</a></li>
                         <li><a href="<?= __relpath__ ?>/dashboard">Dashboard</a></li>
+                        <li><a href="<?= __relpath__ ?>/index2">Evan</a></li>
                     </ul>
                 </div>
             </div>
