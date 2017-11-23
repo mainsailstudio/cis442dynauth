@@ -18,6 +18,15 @@
         <link href="<?= __relpath__ ?>/public/css/evan.css" rel="stylesheet" type="text/css"/>
         <link href="<?= __relpath__ ?>/public/css/quinton.css" rel="stylesheet" type="text/css"/>
         <link href="<?= __relpath__ ?>/public/css/sam.css" rel="stylesheet" type="text/css"/>
+        <!-- all javascript files moved here by Connor (ITS BETTER QUINTON) -->
+        <script src="<?= __relpath__ ?>/public/vendors/jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/angular/angular.min.js"></script>
+        <script src="<?= __relpath__ ?>/public/js/connor.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/js/evan.js" type="text/javascript"></script>
+        <!-- Are you having a hard day fixing code?
+        On any page this is included press [up, down, left, right, enter].  -->
+        <script src="<?= __relpath__ ?>/public/js/sam.js" type="text/javascript"></script>
         <?php
         /**
          * this allows use to dynamically include css files dependant on our needs.
@@ -54,11 +63,11 @@
             </div>
         </nav>
         <div class="body-wrapper-class">
-            <?php 
+            <?php
             /**
              * includes the meat of the file
              */
-            require __ecom__ . "$viewbag[page_path]"; 
+            require __ecom__ . "$viewbag[page_path]";
             ?>
         </div>
 
@@ -87,18 +96,25 @@
                         <p>Our mission is to secure the infrastructure of the Internet to create a safe and productive environment accessible for everyone everywhere.</p>
                     </div>
                 </div>
+                <div class="row">
+
+                    <div class="footer-left">
+                        <div class="credits">
+                            &copy; MyBiz Theme. All rights reserved.
+                            <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyBiz
+            -->
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </footer>
-
-
-        <script src="<?= __relpath__ ?>/public/vendors/jquery/jquery.min.js" type="text/javascript"></script>
-        <script src="<?= __relpath__ ?>/public/vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="<?= __relpath__ ?>/public/js/connor.js" type="text/javascript"></script>
-        <script src="<?= __relpath__ ?>/public/js/evan.js" type="text/javascript"></script>
-        <!-- Are you having a hard day fixing code? 
-        On any page this is included press [up, down, left, right, enter].  -->
         <script src="<?= __relpath__ ?>/public/js/quinton.js" type="text/javascript"></script>
-        <script src="<?= __relpath__ ?>/public/js/sam.js" type="text/javascript"></script>
         <?php
         /**
          * again, dynamically insert javascript files
@@ -110,4 +126,4 @@
         }
         ?>
     </body>
-</html>
+    </html>

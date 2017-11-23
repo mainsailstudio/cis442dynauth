@@ -62,6 +62,10 @@ class home {
 
     }
 
+    public function index2() {
+        
+    }
+
     public function dashboard() {
         if (empty($_SESSION['is_logged_in'])) {
             header('Location:/login');

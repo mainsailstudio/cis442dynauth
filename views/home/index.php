@@ -8,33 +8,57 @@
                 }
             }
             ?>
-            <div class="demo">
-              <div id="tokens">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
+          </div>
+            <!--
+            Connor's demo code here
+
+            To do:
+            Autofill all 10 inputs using angular
+            Allow user to change input dynamically
+            Show those changes dynamically in the hashes
+            -->
+          <div ng-app="ngDynauth"><!-- Start angular app -->
+            <div class="row" id="demo" ng-controller="ngController">
+              <div class="col-md-6">
+                  <h3>Your "auths"</h3>
+                  These are the 10 (or more!) words that dynamically make up your "dynauth".
+                  <form id="allAuthForm">
+                    <input type="text" name="auth1" id="auth1" class="demoAuth" ng-model="auth1" value="ant" />
+                    <input type="text" name="auth2" id="auth2" class="demoAuth" ng-model="auth2" value="bear" />
+                    <input type="text" name="auth3" id="auth3" class="demoAuth" ng-model="auth3" value="cat" />
+                    <input type="text" name="auth4" id="auth4" class="demoAuth" ng-model="auth4" value="dog" />
+                    <input type="text" name="auth5" id="auth5" class="demoAuth" ng-model="auth5" value="eagle" />
+                    <input type="text" name="auth6" id="auth6" class="demoAuth" ng-model="auth6" value="fish" />
+                    <input type="text" name="auth7" id="auth7" class="demoAuth" ng-model="auth7" value="goat" />
+                    <input type="text" name="auth8" id="auth8" class="demoAuth" ng-model="auth8" value="horse" />
+                    <input type="text" name="auth9" id="auth9" class="demoAuth" ng-model="auth9" value="iguana" />
+                    <input type="text" name="auth10" id="auth10" class="demoAuth" ng-model="auth10" value="jackal" />
+                  </form>
               </div>
-              <form>
-                <input type="text" name="auth1" placeholder="auth1" />
-                <input type="text" name="auth2" placeholder="auth2" />
-                <input type="text" name="auth3" placeholder="auth3" />
-                <input type="text" name="auth4" placeholder="auth4" />
-                <input type="text" name="auth5" placeholder="auth5" />
-                <input type="text" name="auth6" placeholder="auth6" />
-                <input type="text" name="auth7" placeholder="auth7" />
-                <input type="text" name="auth8" placeholder="auth8" />
-                <input type="text" name="auth9" placeholder="auth9" />
-                <input type="text" name="auth10" placeholder="auth10" />
-              </form>
-              <script>
-              var tokenArray = [];
-              function myFunction() {
-                for(i=0;i>4;i++){
-                  var token = Math.floor((Math.random * 10));
-                  tokenArray.push(token);
-                }
-                $("#tokens").prepend("tokenArray");
-              }
-              </script>
-            </div><!-- end of Connor's demo code -->
-        </div>
+              <div class="col-md-6">
+                <h3>Dynauth</h3>
+                Auth 1: {{auth1}}<br />
+                Auth 2: {{auth2}}<br />
+                Auth 3: {{auth3}}<br />
+                <hr />
+                Auth 1 though displayHash: <a ng-click="ngDisplayHash(auth1)" >TEST </a>
+                  The tokens are:
+                  <div id="thetokens">
+                  </div>
+                  <i class="fa fa-refresh" aria-hidden="true" id="generateTokens"></i>
+
+                <form id="dynauthForm">
+                  <input type="text" name="dynauth" id="dynauthInput" />
+                </form>
+              </div>
+          </div>
+        </div><!-- End angular app -->
+        <script>
+          // call to function that initializes angular app
+          ngDynauth();
+          generateTokens();
+          document.getElementById("generateTokens").addEventListener("click", generateTokens);
+        </script>
+        <!-- end of Connor's demo code -->
     </div>
 </div>
