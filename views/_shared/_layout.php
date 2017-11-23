@@ -57,7 +57,11 @@
                         <li><a href="<?= __relpath__ ?>/test">Test</a></li>
                         <li><a href="<?= __relpath__ ?>/about">About Us</a></li>
                         <li><a href="<?= __relpath__ ?>/dashboard">Dashboard</a></li>
+<<<<<<< HEAD
                         <li><a href="http://blog.cis442.dynauth.io/">Blog</a></li>
+=======
+                        <li><a href="<?= __relpath__ ?>/index2">Evan</a></li>
+>>>>>>> cf56a79ebc857b7f51f6097dfe3d250161aeeb27
                     </ul>
                 </div>
             </div>
