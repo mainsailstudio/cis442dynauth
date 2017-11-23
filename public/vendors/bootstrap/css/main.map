@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/main.css",
+	"sources": [
+		"../sass/main.sass"
+	],
+	"sourcesContent": [
+		".logo {\n\twidth: 150px; }\n"
+	],
+	"mappings": ";AAAA,AAAA,KAAK,CAAC;EACL,KAAK,EAAE,KAAM;CAAG",
+	"names": []
+}
