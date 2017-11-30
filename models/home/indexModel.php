@@ -19,12 +19,23 @@ class index {
     }
     /* This function recieves the ajax call for the demo */
     public function dynauthDemo(){
-      
 
-      /* $query = "select * from demo";
-      $database = "website";
-      $result = db::getMysqli($query, $database);
-      return $result; */
     } // end of dynauth demo
 
+    /* pull products from database and return an array */
+    public function getProductTable($type){
+        $pdo = db::getPDO();
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $stmt = $pdo->prepare("select product, description, price, frequency from website.$type");
+        $stmt->execute();
+        $product = $stmt->fetchAll();
+        return $product;
+      }
+
+    public function validLogin($username, $password){
+        // $pdo = db::getPDO();
+        // $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        // $stmt = $pdo->prepare("select product, description, price, frequency from website.$type");
+        return true;
+    }
 }

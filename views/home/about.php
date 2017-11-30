@@ -6,7 +6,7 @@
                 We are a small team of awesome developers.
             </p>
             <p>
-                Just a test from Connorr
+                Just a test from Connor
             </p>
             <img class="img-responsive" src="/public/img/people.jpg" alt="People"/>
         </div>

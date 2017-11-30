@@ -36,26 +36,13 @@ class db {
         print "<p>" . $error . "</p>";
         exit;
       }
-      $row=mysqli_fetch_array($result,MYSQLI_ASSOC); 
+      $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
       return $row;
         /*
         *   To use:
         *   $row = mysqli_fetch_assoc($result);
         */
     } //  end of resultMysqli
-
-	/* Edit by Connor Peters 11/4/2017
-	*  getCustomerDB to connect to the customer database that contains basic customer information
-	*/
-	public static function getDB($db) {
-        $pdo = new PDO("mysql:host=localhost;dbname=mainsai6_cis442-dynauth-$db", 'mainsai6_cis442', 'Cis442Dynu&thCESQ');
-        /* Uses actual mysql prepared statement instead of emulating them. */
-        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        /* If PDO errors out, throw an exception so we can see it */
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $pdo;
-    }
-
     /**
      * Makes string html safe
      * @param type $var

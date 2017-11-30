@@ -31,10 +31,11 @@ class home {
 
     public function index() {
         $index = new \home\index();
-        $r = $index->getDBstuff();
-        $mysqli =$index->dynauthDemo();
+        $consumer = $index->getProductTable('consumer');
+        $enterprise = $index->getProductTable('enterprise');
         return [
-            'ourVar' => $r
+            'consumer' => $consumer,
+            'enterprise' => $enterprise
         ];
     }
 
@@ -59,14 +60,16 @@ class home {
     }
 
     public function about() {
-
+      return ['page_title' => 'About us',
+              'page_description' => 'About dynauth'];
     }
 
     public function index2() {
-        
+
     }
 
     public function dashboard() {
+        session_start();
         if (empty($_SESSION['is_logged_in'])) {
             header('Location:/login');
             die();
@@ -74,6 +77,7 @@ class home {
     }
 
     public function login() {
+        session_start();
         if (!empty($_SESSION['is_logged_in'])) {
             header('Location:/dashboard');
             die();
@@ -86,6 +90,8 @@ class home {
         $username = !empty($_REQUEST['username']) ? $_REQUEST['username'] : '';
         $password = !empty($_REQUEST['password']) ? $_REQUEST['password'] : '';
         if ($indexModel->validLogin($username, $password)) {
+            session_start();
+            $_SESSION['is_logged_in'] = $username;
             header('Location:/dashboard');
             die();
         } else {
