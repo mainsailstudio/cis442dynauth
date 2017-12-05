@@ -35,8 +35,10 @@ class home {
         $enterprise = $index->getProductTable('enterprise');
         return [
             'consumer' => $consumer,
-            'enterprise' => $enterprise
-        ];
+            'enterprise' => $enterprise,
+            'page_title' => 'Home | Dynauth',
+            'page_description' => 'homepage'
+            ];
     }
 
     public function contact() {
@@ -55,25 +57,19 @@ class home {
         ];
     }
 
-    public function test() {
-
-    }
-
     public function about() {
       return ['page_title' => 'About us',
               'page_description' => 'About dynauth'];
     }
 
-    public function consumer() {
-
-    }
-
     public function enterprise() {
-
+      return ['page_title' => 'Enterprise Home | Dyanuth',
+              'page_description' => 'Enterprise landing page'];
     }
 
     public function security() {
-        
+      return ['page_title' => 'Security | Dynauth',
+              'page_description' => 'Security'];
     }
 
     public function dashboard() {
@@ -140,9 +136,9 @@ class home {
            $result = true;
            // return ['success' => $result];
         } else {
-            
+
         }
-        
+
     }
 
     public function updatePassword(){
@@ -161,9 +157,9 @@ class home {
            $result = true;
            // return ['success' => $result];
         } else {
-            
+
         }
-        
+
     }
 
     public function deleteSite(){
@@ -178,9 +174,9 @@ class home {
            $result = true;
            // return ['success' => $result];
         } else {
-            
+
         }
-        
+
     }
 
     public function register(){

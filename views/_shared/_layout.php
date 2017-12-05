@@ -69,7 +69,6 @@
                         <li><a href="<?= __relpath__ ?>/security">Security</a></li>
                         <li><a href="<?= __relpath__ ?>/about">About Us</a></li>
                         <li><a href="<?= __relpath__ ?>/dashboard">Dashboard</a></li>
-                        <li><a href="<?= __relpath__ ?>/consumer">Consumer</a></li>
                         <li><a href="http://blog.cis442.dynauth.io/">Blog</a></li>
                     </ul>
                 </div>

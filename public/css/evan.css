@@ -18,25 +18,4 @@
   padding: 0;
 }
 
-/* line 12, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/public/sass/evan.sass */
-.jumbotron h1 {
-  position: absolute;
-  left: 25%;
-  top: 25%;
-  background-color: #01b1d7;
-  color: white;
-  text-transform: uppercase;
-  z-index: 1;
-}
-
-/* line 20, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/public/sass/evan.sass */
-.jumbotron img {
-  max-height: 800px;
-  width: auto;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 0;
-}
-
 /*# sourceMappingURL=../css/evan.map */
