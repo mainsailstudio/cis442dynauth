@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-12">
             <?php
-            include('products.php');
+            include('include/products.php');
             printProducts($viewbag, 'consumer');
             print "<p></p>";
             printProducts($viewbag, 'enterprise');
@@ -17,7 +17,7 @@
             Show those changes dynamically in the hashes
             -->
           <?php
-          include('demo.php');
+          include('include/demo.php');
            ?>
          </div>
        </div>

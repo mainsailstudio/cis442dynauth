@@ -64,8 +64,16 @@ class home {
               'page_description' => 'About dynauth'];
     }
 
-    public function index2() {
+    public function consumer() {
 
+    }
+
+    public function enterprise() {
+
+    }
+
+    public function security() {
+        
     }
 
     public function dashboard() {
@@ -74,6 +82,16 @@ class home {
             header('Location:/login');
             die();
         }
+        require __ecom__ . "/models/home/indexModel.php";
+        $indexModel = new home\index();
+        $r = $indexModel->getSite("0");
+        $p = null;
+
+        if(array_key_exists("sid", $_REQUEST) and array_key_exists("sid", $_REQUEST) and ($_REQUEST['sid'] !== 0 or !empty($_REQUEST['sid'])) and ($_REQUEST['cid'] !== 0 or !empty($_REQUEST['cid']))){
+            $p = $indexModel->getSiteInfo($_REQUEST['sid'], $_REQUEST['cid']);
+            // $p = array('ef' => 'efe');
+        }
+        return ['page_layout' => "/views/_shared/_dashboardLayout.php", 'passwords' => $r, 'password' => $p];
     }
 
     public function login() {
@@ -82,6 +100,14 @@ class home {
             header('Location:/dashboard');
             die();
         }
+        return ['page_title' => "Dynauth Dashboard"];
+    }
+
+    public function logout(){
+        session_start();
+        session_destroy();
+        $_SESSION = [];
+        header('Location:/login');
     }
 
     public function loginSubmit() {
@@ -100,4 +126,72 @@ class home {
         }
     }
 
+    public function addPassword(){
+        require __ecom__ . "/models/home/indexModel.php";
+        $indexModel = new home\index();
+        $url = !empty($_REQUEST['url']) ? $_REQUEST['url'] : '';
+        $name = !empty($_REQUEST['name']) ? $_REQUEST['name'] : '';
+        $username = !empty($_REQUEST['username']) ? $_REQUEST['username'] : '';
+        $password = !empty($_REQUEST['password']) ? $_REQUEST['password'] : '';
+
+        $result = false;
+        if ($indexModel->addSitePassword($url, $name, $username, $password, "0")) {
+           header('Location:/dashboard');
+           $result = true;
+           // return ['success' => $result];
+        } else {
+            
+        }
+        
+    }
+
+    public function updatePassword(){
+        require __ecom__ . "/models/home/indexModel.php";
+        $indexModel = new home\index();
+        $url = !empty($_REQUEST['url']) ? $_REQUEST['url'] : '';
+        $name = !empty($_REQUEST['name']) ? $_REQUEST['name'] : '';
+        $username = !empty($_REQUEST['username']) ? $_REQUEST['username'] : '';
+        $password = !empty($_REQUEST['password']) ? $_REQUEST['password'] : '';
+        $cid = !empty($_REQUEST['cid']) ? $_REQUEST['cid'] : '';
+        $sid = !empty($_REQUEST['sid']) ? $_REQUEST['sid'] : '';
+
+        $result = false;
+        if ($indexModel->updateSitePassword($url, $name, $username, $password, $cid, $sid)) {
+           header('Location:/dashboard');
+           $result = true;
+           // return ['success' => $result];
+        } else {
+            
+        }
+        
+    }
+
+    public function deleteSite(){
+        require __ecom__ . "/models/home/indexModel.php";
+        $indexModel = new home\index();
+        $cid = !empty($_REQUEST['cid']) ? $_REQUEST['cid'] : '';
+        $sid = !empty($_REQUEST['sid']) ? $_REQUEST['sid'] : '';
+
+        $result = false;
+        if ($indexModel->deleteSite($cid, $sid)) {
+           header('Location:/dashboard');
+           $result = true;
+           // return ['success' => $result];
+        } else {
+            
+        }
+        
+    }
+
+    public function register(){
+         return ['page_title' => "Dynauth Register"];
+    }
+
+    public function sitemap(){
+        return ['page_title' => "Dynauth Sitemap"];
+    }
+
+    public function forgot(){
+        return ['page_title' => "Forgot Password"];
+    }
 }

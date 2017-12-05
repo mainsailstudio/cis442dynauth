@@ -1,6 +1,42 @@
-/* line 1, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/sass/evan.sass */
-.btn-adjusted {
+/* line 1, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/public/sass/evan.sass */
+.btn-adjusted.btn-adjusted.btn-adjusted {
   margin-top: 30px;
 }
 
-/*# sourceMappingURL=../public/css/evan.map */
+/* line 3, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/public/sass/evan.sass */
+.flexslider .slides img {
+  max-width: 60%;
+  height: auto;
+  position: relative;
+  left: 20%;
+}
+
+/* line 8, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/public/sass/evan.sass */
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* line 12, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/public/sass/evan.sass */
+.jumbotron h1 {
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  background-color: #01b1d7;
+  color: white;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* line 20, C:/Users/Evan/Documents/ecommerce/cis442dynauth-master/public/sass/evan.sass */
+.jumbotron img {
+  max-height: 800px;
+  width: auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0;
+}
+
+/*# sourceMappingURL=../css/evan.map */

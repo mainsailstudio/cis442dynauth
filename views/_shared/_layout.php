@@ -13,6 +13,12 @@
 
         <link href="<?= __relpath__ ?>/public/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?= __relpath__ ?>/public/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="<?= __relpath__ ?>/public/css/evan.css">
+        <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/MyBiz/css/flexslider.css">
+        <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/bootstrap/font-awesome.min.css">
+        <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/bootstrap/css/style.css">
+        <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/bootstrap/css/main.css">
         <!--individual css for each student-->
         <link href="<?= __relpath__ ?>/public/css/connor.css" rel="stylesheet" type="text/css"/>
         <link href="<?= __relpath__ ?>/public/css/evan.css" rel="stylesheet" type="text/css"/>
@@ -27,6 +33,11 @@
         <!-- Are you having a hard day fixing code?
         On any page this is included press [up, down, left, right, enter].  -->
         <script src="<?= __relpath__ ?>/public/js/sam.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/jquery/jquery.min.js"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/MyBiz/js/jquery.flexslider.js"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/MyBiz/js/jquery.inview.js"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/jquery/script.js"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/MyBiz/contactform/contactform.js"></script>
         <?php
         /**
          * this allows use to dynamically include css files dependant on our needs.
@@ -54,11 +65,12 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="<?= __relpath__ ?>/">Home</a></li>
-                        <li><a href="<?= __relpath__ ?>/test">Test</a></li>
+                        <li><a href="<?= __relpath__ ?>/enterprise">Enterprise</a></li>
+                        <li><a href="<?= __relpath__ ?>/security">Security</a></li>
                         <li><a href="<?= __relpath__ ?>/about">About Us</a></li>
                         <li><a href="<?= __relpath__ ?>/dashboard">Dashboard</a></li>
+                        <li><a href="<?= __relpath__ ?>/consumer">Consumer</a></li>
                         <li><a href="http://blog.cis442.dynauth.io/">Blog</a></li>
-                        <li><a href="<?= __relpath__ ?>/index2">Evan</a></li>
                     </ul>
                 </div>
             </div>
@@ -95,6 +107,7 @@
                     <div class="col-sm-12">
                         <h6>About This Site</h6>
                         <p>Our mission is to secure the infrastructure of the Internet to create a safe and productive environment accessible for everyone everywhere.</p>
+                        <a href="/sitemap">Sitemap</a>
                     </div>
                 </div>
                 <div class="row">

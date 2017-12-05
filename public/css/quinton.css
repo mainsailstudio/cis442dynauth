@@ -23,7 +23,7 @@ body{
 }
 /*this makes the content on white*/
 .body-wrapper-class{
-    padding: 20px 0;
+    /* padding: 20px 0; -- Edit by Connor */
     background-color: white;
 }
 /*nessisary to make the default bootstrap navbar work with a black background*/

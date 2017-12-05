@@ -29,3 +29,10 @@ $font-stack: 'Bitter', serif;
   font-size:18px;
   color:#20ac5b;
 }
+
+@media (min-width: 768px){
+.navbar-nav {
+    float: right;
+    margin: 0;
+}
+}

@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/connor.css",
+	"sources": [
+		"../sass/connor.scss"
+	],
+	"sourcesContent": [
+		"@import url('https://fonts.googleapis.com/css?family=Bitter:400,400i');\r\n\r\n$font-stack: 'Bitter', serif;\r\n\r\n.navbar-brand{\r\n  font-family: $font-stack;\r\n  color:black !important;\r\n}\r\n#demo{\r\n  margin-top:30px;\r\n  border-top:3px solid #0a6998;\r\n}\r\n.demoAuth{\r\n  display:block;\r\n  margin-top:12px;\r\n  padding-top:8px;\r\n  padding-bottom:8px;\r\n  padding-left:4px;\r\n  padding-right:4px;\r\n}\r\n#tokens{\r\n  max-width:220px;\r\n}\r\n#thetokens{\r\n  display:inline;\r\n}\r\n#generateTokens{\r\n  float:right;\r\n  font-size:18px;\r\n  color:#20ac5b;\r\n}\r\n"
+	],
+	"mappings": "AAAA,OAAO,CAAC,8DAAI;;AAIZ,AAAA,aAAa,CAAA;EACX,WAAW,EAHA,QAAQ,EAAE,KAAK;EAI1B,KAAK,EAAC,gBAAiB;CACxB;;;AACD,AAAA,KAAK,CAAA;EACH,UAAU,EAAC,IAAK;EAChB,UAAU,EAAC,iBAAkB;CAC9B;;;AACD,AAAA,SAAS,CAAA;EACP,OAAO,EAAC,KAAM;EACd,UAAU,EAAC,IAAK;EAChB,WAAW,EAAC,GAAI;EAChB,cAAc,EAAC,GAAI;EACnB,YAAY,EAAC,GAAI;EACjB,aAAa,EAAC,GAAI;CACnB;;;AACD,AAAA,OAAO,CAAA;EACL,SAAS,EAAC,KAAM;CACjB;;;AACD,AAAA,UAAU,CAAA;EACR,OAAO,EAAC,MAAO;CAChB;;;AACD,AAAA,eAAe,CAAA;EACb,KAAK,EAAC,KAAM;EACZ,SAAS,EAAC,IAAK;EACf,KAAK,EAAC,OAAQ;CACf",
+	"names": []
+}

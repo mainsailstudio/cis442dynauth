@@ -1,12 +1,12 @@
 {
 	"version": 3,
-	"file": "../../sass/evan.css",
+	"file": "../sass/evan.css",
 	"sources": [
-		"../../sass/evan.sass"
+		"../sass/evan.sass"
 	],
 	"sourcesContent": [
-		".btn-adjusted.btn-adjusted.btn-adjusted {\n\tmargin-top: 30px; }\n"
+		".btn-adjusted.btn-adjusted.btn-adjusted {\n\tmargin-top: 30px; }\n.flexslider .slides img {\n\tmax-width: 100vw;\n\tmax-height: 400px; }\n"
 	],
-	"mappings": ";AAAA,AAA0B,aAAb,AAAA,aAAa,AAAA,aAAa,CAAC;EACvC,UAAU,EAAE,IAAK;CAAG",
+	"mappings": ";AAAA,AAA0B,aAAb,AAAA,aAAa,AAAA,aAAa,CAAC;EACvC,UAAU,EAAE,IAAK;CAAG;;;AACrB,AAAoB,WAAT,CAAC,OAAO,CAAC,GAAG,CAAC;EACvB,SAAS,EAAE,KAAM;EACjB,UAAU,EAAE,KAAM;CAAG",
 	"names": []
 }

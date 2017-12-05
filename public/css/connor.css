@@ -4,6 +4,7 @@
   color: black !important; }
 
 #demo {
+  margin-top: 30px;
   border-top: 3px solid #0a6998; }
 
 .demoAuth {
@@ -25,18 +26,9 @@
   font-size: 18px;
   color: #20ac5b; }
 
-table {
-  border-collapse: collapse; }
-
-table, th, td {
-  border: 0px; }
-
-th, td {
-  text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  height: 1em; }
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: right;
+    margin: 0; } }
 
 /*# sourceMappingURL=connor.css.map */

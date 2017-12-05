@@ -38,4 +38,64 @@ class index {
         // $stmt = $pdo->prepare("select product, description, price, frequency from website.$type");
         return true;
     }
+
+    public function addSitePassword($url, $name, $username, $password, $cid){
+        $pdo = db::getPDO();
+        $stmt = $pdo->prepare("INSERT INTO sitePasswordInfo (name, url, username, password, customer_id) VALUES (:name, :url, :username, :password, :cid)");
+
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':url', $url);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':cid', $cid);
+
+        return $stmt->execute();
+    }
+
+     public function updateSitePassword($url, $name, $username, $password, $cid, $sid){
+        $pdo = db::getPDO();
+        $stmt = $pdo->prepare("UPDATE sitePasswordInfo SET name = :name, url = :url, username = :username, password= :password WHERE site_id = :sid AND customer_id = :cid");
+
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':url', $url);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':cid', $cid);
+        $stmt->bindParam(':sid', $sid);
+
+        return $stmt->execute();
+    }
+
+    public function getSite($id){
+        $pdo = db::getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM sitePasswordInfo where customer_id = ?");
+        if ($stmt->execute(array($id))) {
+            $result = array();
+          while ($row = $stmt->fetch()) {
+            array_push($result, $row);
+          }
+          return $result;
+        }
+        return false;
+    }
+
+     public function getSiteInfo($sid, $cid){
+        $pdo = db::getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM sitePasswordInfo where customer_id = ? AND site_id = ?");
+        if ($stmt->execute(array($cid, $sid))) {
+            $result = $stmt->fetch();
+         
+          return $result;
+        }
+        return false;
+    }
+
+    public function deleteSite($cid, $sid){
+        $pdo = db::getPDO();
+        $stmt = $pdo->prepare("DELETE FROM sitePasswordInfo WHERE customer_id = ? AND site_id = ?");
+        if ($stmt->execute(array($cid, $sid))) {
+          return true;
+        }
+        return false;
+    }
 }

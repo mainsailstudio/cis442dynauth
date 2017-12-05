@@ -1,61 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>MyBiz Bootstrap Theme</title>
-	<meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-	<meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
-	<link rel="stylesheet" href="/public/css/evan.css">
-	<link rel="stylesheet" href="/public/vendors/MyBiz/css/flexslider.css">
-	<link rel="stylesheet" href="/public/vendors/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="/public/vendors/bootstrap/font-awesome.min.css">
-	<link rel="stylesheet" href="/public/vendors/bootstrap/css/style.css">
-	<link rel="stylesheet" href="/public/vendors/bootstrap/css/main.css">
-	<!-- =======================================================
-    Theme Name: MyBiz
-    Theme URL: https://bootstrapmade.com/mybiz-free-business-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-    ======================================================= -->
-</head>
-
-<body id="top" data-spy="scroll">
-	<!--top header-->
-
-	<!--slider-->
 	<div id="slider" class="flexslider">
 
 		<ul class="slides">
 			<li>
-				<img src="/public/img/slider/slider1.jpg">
+				<img src="/public/img/slider/slider4.jpg">
 
 				<div class="caption">
 					<h2><span>put your security</span></h2>
 					<h2><span>in our hands</span></h2>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-
-			</li>
-			<li>
-				<img src="/public/img/slider/slider2.jpg">
-
-				<div class="caption">
-					<h2><span>you can't hack</span></h2>
-					<h2><span>whats already changed</span></h2>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-
-			</li>
-			<li>
-				<img src="/public/img/slider/slider3.jpg">
-
-				<div class="caption">
-					<h2><span>dont be another</span></h2>
-					<h2><span>headline in the news</span></h2>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 				</div>
 
@@ -285,14 +237,3 @@
 		</div>
 	</div>
 </div>
-
-<script src="/public/vendors/jquery/jquery.min.js"></script>
-<script src="/public/vendors/jquery/bootstrap.min.js"></script>
-<script src="/public/vendors/MyBiz/js/jquery.flexslider.js"></script>
-<script src="/public/vendors/MyBiz/js/jquery.inview.js"></script>
-<script src="/public/vendors/jquery/script.js"></script>
-<script src="/public/vendors/MyBiz/contactform/contactform.js"></script>
-
-</body>
-
-</html>
