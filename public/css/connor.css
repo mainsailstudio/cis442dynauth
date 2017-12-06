@@ -36,6 +36,9 @@ nav.navbar.navbar-default {
   min-height: 40vh;
   padding: 0; }
 
+#consumer-header {
+  background-image: url("../img/consumer-home/about1.jpg"); }
+
 .jumbo-header {
   padding-top: 100px;
   padding-bottom: 24px;
@@ -67,6 +70,14 @@ nav.navbar.navbar-default {
     background-attachment: fixed;
     background-size: cover;
     min-height: 94vh;
+    padding: 0; }
+
+  #about-header {
+    background-image: url("../img/consumer-home/about1.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 30vh;
     padding: 0; } }
 
 /*# sourceMappingURL=connor.css.map */

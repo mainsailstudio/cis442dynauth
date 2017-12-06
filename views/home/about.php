@@ -1,3 +1,8 @@
+<div class="col-md-12" id="about-header">
+  <div class="col-md-12">
+    <h1 class="display-3">About us</h1>
+  </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
