@@ -34,31 +34,46 @@ class home {
         $consumer = $index->getProductTable('consumer');
         $enterprise = $index->getProductTable('enterprise');
         return [
-            'page_title' => 'Home | Dynauth',
-            'page_description' => 'dynauth landing page',
             'consumer' => $consumer,
             'enterprise' => $enterprise
         ];
     }
 
     public function contact() {
-      return ['page_title' => 'Contact us | Dynauth',
-              'page_description' => 'contact dynauth'];
+        $index = new \home\contact();
+        $r = $index->getDbTest();
+        return [
+            'ourVar' => $r
+        ];
+    }
+
+    public function connor_test() {
+        $index = new \home\connor_test();
+        $r = $index->getDBstuff();
+        return [
+            'ourVar' => $r
+        ];
+    }
+
+    public function test() {
+
     }
 
     public function about() {
-      return ['page_title' => 'About us | Dynauth',
-              'page_description' => 'about dynauth'];
+      return ['page_title' => 'About us',
+              'page_description' => 'About dynauth'];
+    }
+
+    public function consumer() {
+
     }
 
     public function enterprise() {
-      return ['page_title' => 'Enterprise Landing Page | Dynauth',
-              'page_description' => 'enterprise landing page dynauth'];
+
     }
 
     public function security() {
-      return ['page_title' => 'Security | Dynauth',
-              'page_description' => 'security and dynauth'];
+        
     }
 
     public function dashboard() {
@@ -69,7 +84,7 @@ class home {
         }
         require __ecom__ . "/models/home/indexModel.php";
         $indexModel = new home\index();
-        $r = $indexModel->getSite("0");
+        $r = $indexModel->getSite($_SESSION['is_logged_in']["customer_id"]);
         $p = null;
 
         if(array_key_exists("sid", $_REQUEST) and array_key_exists("sid", $_REQUEST) and ($_REQUEST['sid'] !== 0 or !empty($_REQUEST['sid'])) and ($_REQUEST['cid'] !== 0 or !empty($_REQUEST['cid']))){
@@ -80,12 +95,17 @@ class home {
     }
 
     public function login() {
+         $send = array('page_title' => "Dynauth Dashboard");
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $r =  $this->loginSubmit();
+            $send = array_merge($send, $r);
+        }
         session_start();
         if (!empty($_SESSION['is_logged_in'])) {
             header('Location:/dashboard');
             die();
         }
-        return ['page_title' => "Dynauth Dashboard"];
+        return $send; 
     }
 
     public function logout(){
@@ -98,20 +118,32 @@ class home {
     public function loginSubmit() {
         require __ecom__ . "/models/home/indexModel.php";
         $indexModel = new home\index();
-        print_r($_POST);
-        // header('Location:/login');
-        // return ['page_title' => $_POST];
-        // $username = !empty($_REQUEST['username']) ? $_REQUEST['username'] : '';
-        // $password = !empty($_REQUEST['password']) ? $_REQUEST['password'] : '';
-        // if ($indexModel->validLogin($username, $password)) {
-        //     session_start();
-        //     $_SESSION['is_logged_in'] = $username;
-        //     header('Location:/dashboard');
-        //     die();
-        // } else {
-        //     header('Location:/login');
-        //     die();
-        // }
+        // print_r($_POST);
+
+        $email = !empty($_REQUEST['email']) ? $_REQUEST['email'] : '';
+        $passwords = array();
+        $tokens = explode(" - ", !empty($_REQUEST['authCheck']) ? $_REQUEST['authCheck'] : '');
+        // print_r($tokens);
+        foreach ($tokens as $key => $value) {
+            $p = !empty($_REQUEST["dynauthInput" . ($key+1)]) ? $_REQUEST["dynauthInput" . ($key+1)] : '';
+            if(array_key_exists($value."", $passwords)){
+                array_push($passwords[$value.""], $p);
+
+            }else{
+                $passwords[$value.""] = array($p);
+            }
+           
+        }
+
+        if ($r = $indexModel->validLogin($email, $passwords)) {
+            // print_r($r);
+            session_start();
+            $_SESSION['is_logged_in'] = $r;
+            header('Location:/dashboard');
+            die();
+        } else {
+            return ["Error" => "Invalid Login"];
+        }
     }
 
     public function addPassword(){
@@ -121,16 +153,17 @@ class home {
         $name = !empty($_REQUEST['name']) ? $_REQUEST['name'] : '';
         $username = !empty($_REQUEST['username']) ? $_REQUEST['username'] : '';
         $password = !empty($_REQUEST['password']) ? $_REQUEST['password'] : '';
+        $cid = !empty($_REQUEST['cid']) ? $_REQUEST['cid'] : '';
 
         $result = false;
-        if ($indexModel->addSitePassword($url, $name, $username, $password, "0")) {
+        if ($indexModel->addSitePassword($url, $name, $username, $password, $cid)) {
            header('Location:/dashboard');
            $result = true;
            // return ['success' => $result];
         } else {
-
+            
         }
-
+        
     }
 
     public function updatePassword(){
@@ -149,9 +182,9 @@ class home {
            $result = true;
            // return ['success' => $result];
         } else {
-
+            
         }
-
+        
     }
 
     public function deleteSite(){
@@ -166,31 +199,38 @@ class home {
            $result = true;
            // return ['success' => $result];
         } else {
-
+            
         }
-
+        
     }
     public function registerSubmit(){
         require __ecom__ . "/models/home/indexModel.php";
         $indexModel = new home\index();
-        $cid = !empty($_REQUEST['cid']) ? $_REQUEST['cid'] : '';
-        $sid = !empty($_REQUEST['sid']) ? $_REQUEST['sid'] : '';
         print_r($_POST);
         $result = false;
-        // header('Location:/register');
-        return ['page_title' => $_POST];
-        // if ($indexModel->newUser($_POST)) {
-        //    header('Location:/dashboard');
-        //    print_r($_POST);
-        //    $result = true;
-        //    // return ['success' => $result];
-        // } else {
-
-        // }
+        
+        
+        if ($user = $indexModel->register($_POST)) {
+            session_start();
+            $_SESSION['is_logged_in'] = $user;
+            header('Location:/dashboard');
+            die();
+           // return ['success' => $result];
+        } 
+        return ["Error" => "Invalid Registration"];
+        
     }
     public function register(){
-
-         return ['page_title' => "Dynauth Register"];
+        $send = array('page_title' => "Dynauth Register");
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $r =  $this->registerSubmit();
+            $send = array_merge($send, $r);
+        }
+        
+        return $send; 
+        
+       
+         
     }
 
     public function sitemap(){

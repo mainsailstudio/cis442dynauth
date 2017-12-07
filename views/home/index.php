@@ -51,50 +51,5 @@ include('include/products.php');
        </div>
      </div>
 </div>
-	<!--about bg-->
-	<div id="about-bg">
-
-		<div class="container">
-			<div class="row">
-
-				<div class="about-bg-heading">
-					<h1>sucessful stats about us</h1>
-					<p>what we have achieved so far</p>
-				</div>
-
-				<div class=" col-xs-12 col-md-3">
-					<div class="about-bg-wrapper">
-						<span class="count"><h1><span class="border">32</span>15</h1>
-					</span>
-					<p>happy clients</p>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-md-3">
-				<div class="about-bg-wrapper">
-					<span class="count"><h1>2217</h1></span>
-					<p>projects</p>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-md-3">
-				<div class="about-bg-wrapper">
-					<span class="count"><h1>1522</h1></span>
-					<p>branches</p>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-md-3">
-				<div class="about-bg-wrapper">
-					<span class="count"><h1>3151</h1></span>
-					<p>expert team</p>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<div class="cover"></div>
-
 </div>
 </div>

@@ -7,6 +7,21 @@ use db;
 
 class index {
 
+    public function getDBstuff() {
+        $sql = "select fname from customer";
+        $pdo = db::getPDO();
+        $r = false;
+        if ($con = $pdo->prepare($sql)) {
+            $con->execute();
+            $r = $con->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $r;
+    }
+    /* This function recieves the ajax call for the demo */
+    public function dynauthDemo(){
+
+    } // end of dynauth demo
+
     /* pull products from database and return an array */
     public function getProductTable($type){
         $pdo = db::getPDO();
@@ -21,25 +36,35 @@ class index {
         $pdo = db::getPDO();
         $stmt = $pdo->prepare("SELECT * FROM customerInfo where email = ?");
         $user;
-        if ($stmt->execute(array($info['email']))) {
-            $user = $stmt->fetch();
+        if ($stmt->execute(array($email))) {
+            $user = $stmt->fetch(); 
         }
         if($user && count($user) >= 1){
             foreach ($passwords as $key => $value) {
-                $stmt = $pdo->prepare("SELECT customer_id FROM passwordVault WHERE customer_id = ? AND pIndex = ? AND password = ?");
-                    if ($stmt->execute(array($user->customer_id, $key, $value))) {
-                            $result = $stmt->fetch();
-                            if(!$result){
+                foreach ($value as $key1 => $value1) {
+                    $stmt = $pdo->prepare("SELECT customer_id, password FROM passwordVault WHERE customer_id = ? AND pIndex = ? ");
+                   
+                    if ($stmt->execute(array($user['customer_id'], $key))) {
+                            $result = $stmt->fetch(); 
+                            // var_dump($result);
+                            // var_dump($value1);
+                            if(!$result || !password_verify($value1, $result['password'])){
                                 return false;
+                                // var_dump("cant find");
                             }
+                            
                     }
-
+                }
+                
+            
             }
         }else {
             return false;
         }
-        return true;
 
+        // die();
+        return $user;
+        
     }
 
     public function addSitePassword($url, $name, $username, $password, $cid){
@@ -87,7 +112,7 @@ class index {
         $stmt = $pdo->prepare("SELECT * FROM sitePasswordInfo where customer_id = ? AND site_id = ?");
         if ($stmt->execute(array($cid, $sid))) {
             $result = $stmt->fetch();
-
+         
           return $result;
         }
         return false;
@@ -115,21 +140,22 @@ class index {
         $stmt = $pdo->prepare("SELECT * FROM customerInfo where email = ?");
         $user;
         if ($stmt->execute(array($info['email']))) {
-            $user = $stmt->fetch();
+            $user = $stmt->fetch(); 
         }
+        
 
         $stmt = $pdo->prepare("INSERT INTO passwordVault (customer_id, pIndex, password) VALUES (:customer_id, :index, :password)");
         $counter = 1;
         foreach($info as $key => $value) {
             if (preg_match("/dynauthInput*/",$key)){
-                $stmt->bindParam(':customer_id', $user->customer_id);
+                $stmt->bindParam(':customer_id', $user['customer_id']);
                 $stmt->bindParam(':index', $counter);
-                $stmt->bindParam(':password', $value);
+                $stmt->bindParam(':password', password_hash(trim($value), PASSWORD_DEFAULT));
                 $stmt->execute();
                 $counter++;
             }
         }
 
-        return true;
+        return $user;
     }
 }

@@ -21,6 +21,16 @@
         <link href="<?= __relpath__ ?>/public/vendors/sb-admin/vendor/morrisjs/morris.css" rel="stylesheet" type="text/css">
         <!-- Custom Fonts -->
         <link href="<?= __relpath__ ?>/public/vendors/sb-admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            .navbar-brand{
+              font-family: 'Bitter', serif !important;
+              color:black !important;
+              font-size: 1.5em;
+              vertical-align: middle;
+              line-height: 50px;
+              margin-left: 40px;
+            }
+        </style>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -42,6 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
+
                     <a class="navbar-brand" href="/dashboard">Dynauth.io</a>
                 </div>
                 <!-- /.navbar-header -->
@@ -53,7 +64,11 @@
                                 <img src="<?= __relpath__ ?>/public/vendors/sb-admin/dist/img/Profile.png">
                                 <div id="user-preview">
                                     <div id="user-name">
-                                        obaba1@brockport.edu
+                                        <?php  
+                                            
+                                            echo $_SESSION['is_logged_in']['email'];
+                                         ?>
+                                        <!-- obaba1@brockport.edu -->
                                     </div>
                                     <div id="user-type">
                                         Free User

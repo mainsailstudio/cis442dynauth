@@ -6,10 +6,10 @@
                 <div class="col-sm-12 login-head">
                     <h1>Create an account</h1>
                 </div>
-                <form action="/registerSubmit" method="post">
+                <form action="/register" method="post" id="registerForm">
                     <div class="col-sm-12">
                         <label>Email</label>
-                        <input class="form-control" name="email"/>
+                        <input class="form-control" name="email" id="email" />
                     </div>
                     <div class="col-sm-12">
                         <label>Master Password</label>
@@ -59,7 +59,13 @@
                         <label>Reminder</label>
                         <input class="form-control" type="text" name="reminder"/>
                     </div>
-               
+                    <div id="dynauthMessage" class="alert-danger">
+                        <?php if (isset($viewbag['Error'])): ?>
+                             Error with Registration, make sure email has not been used.
+                        <?php endif ?>
+                        
+                    </div>
+                    
                 
                 <div>
                     <div class="col-sm-12">
@@ -75,6 +81,38 @@
 </div>
 
 <script type="text/javascript">
+var msg = "";
+function checkEmail(){
+    var reg = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+    var email = $('#email').val();
+    if(!reg.test(email)){
+            msg += "Invalid Email<br>";
+        return false;
+    }
+    return true;
+}
+function checkPasswordsAndReminder(){
+    var valid = true;
+    $("input").filter(function () {
+    valid = valid & $.trim($(this).val()).length != 0
+        }).length != 0;
+
+    if(!valid){
+        msg += "Invalid Password and/or Reminder ";
+    }
+    return valid;
+}
+$(document).on('submit', '#registerForm', function(evt){
+
+            msg = "";
+        if(checkEmail() & checkPasswordsAndReminder()){
+
+        } else{
+            evt.preventDefault();
+             $('#dynauthMessage').html(msg);
+        }
+})
+
     $("#add-pass").click(function(){
       
         var lenInput = $("input[id^=dynauthInput]").length

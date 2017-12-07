@@ -9,11 +9,12 @@
         <meta name="keywords" content="<?= empty($viewbag['page_keywords']) ? '' : $viewbag['page_keywords'] ?>">
         <meta name="author" content="Quinton Ward">
 
-        <title><?= empty($viewbag['page_title']) ? 'Test' : $viewbag['page_title'] ?></title>
+        <title><?= empty($viewbag['page_title']) ? 'Dynauth.io' : $viewbag['page_title'] ?></title>
 
         <link href="<?= __relpath__ ?>/public/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?= __relpath__ ?>/public/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="<?= __relpath__ ?>/public/css/evan.css">
         <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/MyBiz/css/flexslider.css">
         <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/bootstrap/font-awesome.min.css">
         <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/bootstrap/css/style.css">
@@ -65,7 +66,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="<?= __relpath__ ?>/">Home</a></li>
                         <li><a href="<?= __relpath__ ?>/enterprise">Enterprise</a></li>
-                        <li><a href="<?= __relpath__ ?>/security">Security</a></li>
+                        <!-- <li><a href="<?= __relpath__ ?>/security">Security</a></li> -->
                         <li><a href="<?= __relpath__ ?>/about">About Us</a></li>
                         <li><a href="<?= __relpath__ ?>/dashboard">Dashboard</a></li>
                         <li><a href="http://blog.cis442.dynauth.io/">Blog</a></li>
@@ -127,7 +128,6 @@
             </div>
         </footer>
         <script src="<?= __relpath__ ?>/public/js/quinton.js" type="text/javascript"></script>
-        <script src="<?= __relpath__ ?>/public/vendors/smooth-scroll/smooth-scroll.js" type="text/javascript"></script>
         <?php
         /**
          * again, dynamically insert javascript files

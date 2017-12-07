@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<div style="text-align: right">
+<div style="text-align: right; margin-top: 20px; margin-right: 20px;">
     <button class="btn btn-primary btn-lg" id="add-btn" data-toggle="modal" data-target="#myModal">
     Add Password
     </button>
@@ -14,12 +14,11 @@
                 </h4>
             </div>
             <form id="passwordForm" role="form" method="post" action="/addPassword">
+                <input type="text" hidden="hidden" name="cid" value="<?= $_SESSION['is_logged_in']['customer_id']; ?>" >
                 <input type="text" name="sid" hidden="hidden" <?php if ($viewbag['password']): ?>
                                value = "<?= $viewbag['password']['site_id']; ?>"
                             <?php endif ?>>
-                <input type="text" name="cid" hidden="hidden" <?php if ($viewbag['password']): ?>
-                               value = "<?= $viewbag['password']['customer_id']; ?>"
-                            <?php endif ?>>
+               
             <div class="modal-body row">
                 <div class="col-sm-12">
                     

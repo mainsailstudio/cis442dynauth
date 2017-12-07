@@ -20,6 +20,8 @@ $(function(){
 		return url.match(regex);
 	}
 
+
+
 	function isEmpty(str) {
     	return (!str || 0 === str.length);
 	}
@@ -31,7 +33,7 @@ $(function(){
 	   	var username = $('#username').val();
 	   	var password = $('#password').val();
 
-	   	alert(url);
+	
 	   	// console.log(url);
 		if(checkURL(url)){
 

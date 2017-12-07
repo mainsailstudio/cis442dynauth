@@ -1,6 +1,29 @@
 <?php
 // session_start();
 ?>
+<script type="text/javascript">
+    var tok;
+    function checkLogin(){
+        $('#loginForm').append('<input type="hidden" name="authCheck" value="'+tok+'">');
+        return true;
+    }
+    $(document).on('click','#loginButton',function(evt){
+    
+    $('#loginForm').append('<input type="hidden" name="authCheck" value="'+tok+'">');
+    $('form#loginForm').submit();
+})
+    function generateTokens() {
+  var tokenArray = [];
+  for(i=0;i<4;i++){
+    var token = Math.ceil(Math.random() * 8);
+    $("#dynauthInputDiv"+(i+1) + " span").text(token);
+    tokenArray.push(token);
+  }
+  tok = tokenArray.join(" - ");
+  // document.getElementById("thetokens").innerHTML = tokenArray.join(" - ");
+  return(tokenArray);
+}
+</script>
 <div class="login container">
     <div class="row">
         
@@ -9,36 +32,61 @@
                 <div class="col-sm-12 login-head">
                     <h1>Log In to Access Dynauth</h1>
                 </div>
-                <form action="/loginSubmit" id="#loginForm" method="post">
+                <form action="/login" id="loginForm"  method="post">
                     <div class="col-sm-12">
-                        <label>Username</label>
-                        <input class="form-control" name="username"/>
+                        <label>Email</label>
+                        <input class="form-control" name="email" type="email"/>
                     </div>
-                    <div class="col-sm-12">
-                        <label>Password</label>
+
+                    <div class="col-sm-12" style="margin-top: 10px;">
+                       
                         <div>
-                         <div id="thetokens"></div><i class="fa fa-refresh" aria-hidden="true" id="generateTokens"></i></h3>
-                     </div>
+                         <div id="thetokens"> <label>Password</label></div><i class="fa fa-refresh" aria-hidden="true" id="generateTokens"></i>
+                        </div>
+                            
+                            <br>
+
                         <!-- <input class="form-control" name="password" type="password"/> -->
                         <!-- <form id="dynauthForm" onsubmit="ngCheckDynauth()"> -->
-                            <input type="text" name="dynauthInput1" id="dynauthInput1" class="form-control demoAuth" /> -
+                        <div id="passwords">
+                            <div class="input-group" id="dynauthInputDiv1">
+                                <span class="input-group-addon">1. </span>
+                                <input type="text" name="dynauthInput1" id="dynauthInput1" class="form-control" >
+                            </div>
+                            <div class="input-group" id="dynauthInputDiv2">
+                                <span class="input-group-addon">2. </span>
+                                <input type="text" name="dynauthInput2" id="dynauthInput2" class="form-control">
+                            </div>
+                            <div class="input-group" id="dynauthInputDiv3">
+                                <span class="input-group-addon">3. </span>
+                                <input type="text" name="dynauthInput3" id="dynauthInput3" class="form-control">
+                            </div>
+                            <div class="input-group" id="dynauthInputDiv4">
+                                <span class="input-group-addon">4. </span>
+                                <input type="text" name="dynauthInput4" id="dynauthInput4" class="form-control" >
+                            </div>
+                        </div>
+                            <!-- <input type="text" name="dynauthInput1" id="dynauthInput1" class="form-control demoAuth" /> -
                             <input type="text" name="dynauthInput2" id="dynauthInput2" class="form-control demoAuth" /> -
                             <input type="text" name="dynauthInput3" id="dynauthInput3" class="form-control demoAuth" /> -
-                            <input type="text" name="dynauthInput4" id="dynauthInput4" class="form-control demoAuth" />
-                            <input type="submit" />
+                            <input type="text" name="dynauthInput4" id="dynauthInput4" class="form-control demoAuth" /> -->
+                           
                         <!-- </form> -->
-                        <!-- <div id="dynauthMessage"></div> -->
+                        <?php if (isset($viewbag['Error'])): ?>
+                             <div id="dynauthMessage" class="alert-danger">Error with Login</div>
+                        <?php endif ?>
+                       
                     </div>
                
                 <div class="col-sm-12 forgot">
                    <a href="/forgot">Forgot Password?</a> 
                 </div>
-                <div class="col-sm-12">
-                    <input type="checkbox" name="">Remember Me
                     <div class="col-sm-12">
-                        <button class="btn btn-primary" type="button" id="loginButton">Login</button>
-                    </div>
-                </div> 
+                        <input type="checkbox" name="">Remember Me
+                        <div class="col-sm-12">
+                            <button class="btn btn-primary" type="button"  id="loginButton">Login</button>
+                        </div>
+                    </div> 
                  </form> 
                 <div class="col-sm-12 register">
                     New to Dynauth? <a href="/register">Create an account now</a>
@@ -74,11 +122,7 @@ ngDynauth("#salt10", "hPO23PxmIWrEE2GT");
 generateTokens();
 document.getElementById("generateTokens").addEventListener("click", generateTokens);
 
-$(document).on('click','#loginButton',function(evt){
-    alert("what");
-    $('#loginForm').append('<input type="hidden" name="authCheck" value="'+$('#thetokens').text()+'">');
-    $('#loginForm')[0].submit();
-})
+
 
 function ngCheckDynauth(){
   var tokens = $("#thetokens").text();
