@@ -16,7 +16,9 @@ function getDemo(){
       <h3>What's going on:</h3>
     </div>
     <div class="col-sm-8">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>Passwords have long been the de facto standard when it comes to authentication. It makes sense; implementing a password authentication scheme is easy and cheap for the developers, while being familiar for most users. However, the drawbacks of using passwords as the single point of authentication are diverse and well documented. Just Google search “Problems with passwords” and read through the 9,000,000+ results (or at least the first 3).</p>
+      <p>Dynauth seeks to solve the problems that are inherent to passwords by providing a robust framework that centers around users dynamically authenticating into applications using both a password manager and the OAuth 2.0 protocol.</p>
+      <p><span style="font-weight: 400;">Each user configures a database of words (known as “auths”) that correlate to numbers (known as “tokens”). The list below displays what a basic configuration might look like.</span></p>
     </div>
   </div>
   <div class="container sm-pad-contain">
