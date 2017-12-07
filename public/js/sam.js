@@ -36,7 +36,7 @@ $(function(){
 		if(checkURL(url)){
 
 		} else {
-			alert("Check URL")
+			alert("Check Information")
 			evt.preventDefault();
 		}
 
