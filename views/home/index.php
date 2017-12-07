@@ -1,77 +1,56 @@
+<?php
+include('include/demo.php');
+include('include/products.php');
+?>
+<div class="container-fluid nopadding">
     <div class="col-md-12" id="consumer-header">
       <div class="col-md-12">
-        <h1 class="display-3">Passwords have long been the standard when it comes to authentication</h1>
+        <h1 class="display-3">Insecure passwords have long been the standard when it comes to authentication</h1>
       </div>
       <div class="col-md-12">
         <h3>Let's change that</h3>
+        <a href="#learn-more"><button type="button" class="btn btn-primary btn-lg classy-button">Learn More</button></a>
       </div>
     </div>
 
-	<!--about-->
-	<div id="about">
-    <?php
-    include('include/demo.php');
-    print "<p></p>";
-    include('include/products.php');
-     ?>
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-					<div class="about-heading">
-						<h2>about</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus magna,malesuada porta elementum vitae.</p>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<!--about wrapper left-->
-		<div class="container">
+<!--Demo-->
+<div id="demo">
+ <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+   <div class="main-heading"><a id="learn-more"></a>
+     <h2>See it in action</h2>
+     <p>Understand how dynamic authentication works and how you can benefit from it</p>
+   </div>
+</div>
+</div>
 
-			<div class="row">
-				<div class="col-xs-12 hidden-sm col-md-5">
+ <div class="col-md-12">
+  <?php getDemo() ?>
+</div>
 
-					<div class="about-left">
-						<img src="/public/img/about/about1.jpg" alt="">
-					</div>
+ <!--Products-->
+ <div class="container" id="products">
+     <div class="row">
+       <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+         <div class="main-heading">
+           <h2>Our Products</h2>
+           <p>We offer both enterprise and consumer products</p>
+         </div>
+       </div>
+     </div>
 
-				</div>
+     <div class="row">
+       <div class="col-sm-12 col-md-6 products-table-overflow">
+         <h2>Consumer Products</h2>
+         <?php printProducts($viewbag, 'consumer'); ?>
+       </div>
 
-				<!--about wrapper right-->
-				<div class="col-xs-12 col-md-7">
-					<div class="about-right">
-						<div class="about-right-heading">
-							<h1>about our consulting</h1>
-						</div>
-
-						<div class="about-right-boot">
-							<div class="about-right-wrapper">
-								<a href="#"><h3>Boost Your Business</h3></a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci et, deleniti voluptatum, vel neque inventore. Blanditiis ipsum doloribus ratione non!</p>
-							</div>
-						</div>
-
-						<div class="about-right-best">
-							<div class="about-right-wrapper">
-								<a href="#"><h3>Best Business Statitics</h3></a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt quia quo rerum temporibus eum, aut.</p>
-							</div>
-						</div>
-
-						<div class="about-right-support">
-							<div class="about-right-wrapper">
-								<a href="#"><h3>24/7 Online Support</h3></a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore deleniti veritatis eveniet enim temporibus sed, explicabo qui?</p>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
+       <div class="col-sm-12 col-md-6 products-table-overflow">
+         <h2>Enterprise Products</h2>
+         <?php printProducts($viewbag, 'enterprise'); ?>
+       </div>
+     </div>
+</div>
 	<!--about bg-->
 	<div id="about-bg">
 
@@ -118,117 +97,4 @@
 	<div class="cover"></div>
 
 </div>
-
-<!--service-->
-<div id="service">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<div class="service-heading">
-					<h2>service</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus magna,malesuada porta elementum vitae.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!--services wrapper-->
-<section class="services-style-one">
-	<div class="outer-box clearfix">
-
-		<div class="services-column">
-			<div class="content-outer">
-				<div class="row clearfix">
-
-					<div class="service-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="inner-box">
-							<div class="icon-box"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
-							<h4>FINANCIAL PLANNING</h4>
-							<div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. </div>
-						</div>
-					</div>
-
-					<div class="service-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="inner-box">
-							<div class="icon-box"><i class="fa fa-bar-chart" aria-hidden="true"></i></div>
-							<h4>BUSINESS PLANNING</h4>
-							<div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. </div>
-						</div>
-					</div>
-
-					<div class="service-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="inner-box">
-							<div class="icon-box"><i class="fa fa-trophy" aria-hidden="true"></i></div>
-							<h4>WORK &amp; REDUNDANCY</h4>
-							<div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. </div>
-						</div>
-					</div>
-
-					<div class="service-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="inner-box">
-							<div class="icon-box"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
-							<h4>MORTGAGE ADVISOR</h4>
-							<div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. </div>
-						</div>
-					</div>
-
-					<div class="service-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="inner-box">
-							<div class="icon-box"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
-							<h4>RETIREMENT PLANNING</h4>
-							<div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. </div>
-						</div>
-					</div>
-
-					<div class="service-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="inner-box">
-							<div class="icon-box"><i class="fa fa-money" aria-hidden="true"></i></div>
-							<h4>SAVING AND INVESTING</h4>
-							<div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!--Content Column-->
-		<div class="content-column clearfix">
-			<div class="content-box">
-				<div class="inner-box">
-					<!--Section Title-->
-					<div class="sec-title aligned-right">
-						<h2>Our Servi<span>ces</span></h2>
-					</div>
-					<div class="text">Lorem Ipsum is simply dummy text printing and typesetting industry. Lorem Ipsum has been industry's standard dummy text ever since 1500s, when an unknown printer specimen book. </div>
-
-					<button class="btn">learn more</button>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
-</section>
-
-
-
-<!--service gapping-->
-<div class="service-footer hidden-xs">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7">
-				<div class="service-footer-left">
-					<h3>Need to <span>Consult with us</span> ? Book an appointment</h3>
-					<p>The Brady Bunch the Brady Bunch that's the way we all became the Brady Bunch</p>
-				</div>
-			</div>
-
-			<div class="col-md-5">
-				<div class="service-footer-right">
-					<button class="btn btn-adjusted">book now</button>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>

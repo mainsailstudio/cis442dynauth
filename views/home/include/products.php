@@ -1,7 +1,7 @@
 <?php
 function printProducts($viewbag, $type){
   if (is_array($viewbag[$type])) {
-    print "<table><tr><th>Product</th><th>Description</th><th>Price</th><th>Frequency</th></tr>";
+    print "<table class=\"products-table\"><tr><th>Product</th><th class=\"th-description\">Description</th><th class=\"th-price\">Price</th><th>Frequency</th></tr>";
     $i = 0;
       foreach($viewbag[$type] as $product=>$keyval){
         print "<tr>";

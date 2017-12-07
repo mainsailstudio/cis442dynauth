@@ -84,7 +84,7 @@ class index {
         $stmt = $pdo->prepare("SELECT * FROM sitePasswordInfo where customer_id = ? AND site_id = ?");
         if ($stmt->execute(array($cid, $sid))) {
             $result = $stmt->fetch();
-         
+
           return $result;
         }
         return false;

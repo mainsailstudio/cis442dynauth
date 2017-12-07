@@ -5,6 +5,7 @@ function generateTokens() {
     tokenArray.push(token);
   }
   document.getElementById("thetokens").innerHTML = tokenArray.join(" - ");
+  return(tokenArray);
 }
 
 function ngDynauth(object, value){

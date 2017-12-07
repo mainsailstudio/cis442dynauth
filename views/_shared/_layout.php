@@ -14,7 +14,6 @@
         <link href="<?= __relpath__ ?>/public/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?= __relpath__ ?>/public/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="<?= __relpath__ ?>/public/css/evan.css">
         <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/MyBiz/css/flexslider.css">
         <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/bootstrap/font-awesome.min.css">
         <link rel="stylesheet" href="<?= __relpath__ ?>/public/vendors/bootstrap/css/style.css">
@@ -128,6 +127,7 @@
             </div>
         </footer>
         <script src="<?= __relpath__ ?>/public/js/quinton.js" type="text/javascript"></script>
+        <script src="<?= __relpath__ ?>/public/vendors/smooth-scroll/smooth-scroll.js" type="text/javascript"></script>
         <?php
         /**
          * again, dynamically insert javascript files

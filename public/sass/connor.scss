@@ -1,21 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i');
 
-$font-stack: 'Bitter', serif;
+$font1: 'Bitter', serif;
+$font2: 'Raleway', sans-serif;
+$color1: #3279b7;
+$color2: #d00000;
+
+.lg-pad-contain{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+
+.md-pad-contain{
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+.sm-pad-contain{
+  padding-top:7.5px;
+  padding-bottom:7.5px;
+}
 
 .navbar-brand{
-  font-family: $font-stack;
+  font-family: $font1;
   color:black !important;
 }
 nav.navbar.navbar-default{
   min-height:auto;
 }
-#demo{
+#start-demo{
   margin-top:30px;
-  border-top:3px solid #0a6998;
+  border-top:5px solid $color1;
+  padding-top:30px;
+}
+.blueThick{
+  border-top:5px solid $color1;
 }
 .demoAuth{
-  display:block;
+  width:80px;
   margin-top:12px;
+  margin-bottom:12px;
+  margin-left:8px;
+  margin-right:8px;
   padding-top:8px;
   padding-bottom:8px;
   padding-left:4px;
@@ -29,18 +54,27 @@ nav.navbar.navbar-default{
 }
 #generateTokens{
   float:right;
-  font-size:18px;
-  color:#20ac5b;
+  font-size:24px;
+  color:$color1;
 }
-
+#worked{
+  color:$color1;
+}
+#no-worked{
+  color:$color2;
+}
 #consumer-header{
-  background-image:url("../img/consumer-home/security1-mobile.jpg");
+  background-image:url("../img/consumer-home/security1-dark.jpg");
   background-attachment: fixed;
   background-size: cover;
   min-height:40vh;
   padding:0;
 }
-#consumer-header{
+
+.nopadding{
+  padding:0;
+}
+#about-header{
   background-image:url("../img/consumer-home/about1.jpg");
 }
 .jumbo-header{
@@ -51,34 +85,150 @@ nav.navbar.navbar-default{
 }
 
 #consumer-header h1{
-    max-width: 60%;
-    margin-top:14%;
-    background-color: #01b1d7;
+    max-width: 75%;
+    padding-top: 14%;
+    margin-top:0;
+    font-family: $font1;
+    margin-left: 14%;
     color: white;
     text-transform: uppercase;
+    word-wrap: break-word;
+    font-size:28px;
 }
 
 #consumer-header h3{
-    font-size:40px;
-    margin-top:5%;
-    max-width: 60%;
-    background-color: #01b1d7;
+    max-width: 75%;
+    margin-left: 14%;
     color: white;
-    text-transform: uppercase;
+    font-size:20px;
+    padding-bottom:1%;
+    text-transform: lowercase;
+    font-family:$font2;
+    word-wrap: break-word;
 }
 
+.classy-button{
+  color:white;
+  border-radius:0px;
+  border:3px solid $color1;
+  background-color: $color1;
+  margin-left: 14%;
+  margin-top:1%;
+  margin-bottom:14%;
+  width:auto;
+  height:auto;
+  min-width:170px;
+  min-height:65px;
+  font-weight:300;
+  text-transform: uppercase;
+  font-size:16pt;
+  font-family: $font1;
+}
+
+.classy-button:hover{
+  background-color:white;
+  color:black;
+  border-radius:5px;
+}
+
+/*About*/
+#products {
+	padding: 10px;
+}
+
+.main-heading {
+	text-align: center;
+  padding-top:50px;
+}
+
+.main-heading h2 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 700;
+	font-size: 45px;
+	text-transform: uppercase;
+}
+
+.main-heading p {
+	margin-top: 20px;
+	line-height: 25px;
+	color: #8e8e8e;
+	margin-bottom: 50px;
+}
+
+.products-table th,
+.products-table td{
+  vertical-align: top;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-left:6px;
+  padding-right:6px;
+  min-width:90px;
+}
+
+.products-table .th-description{
+  min-width:200px;
+}
+
+.products-table tr:nth-child(odd) {
+  background-color:#eee;
+}
+
+.products-table-overflow{
+  overflow-x:scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.products-table-overflow::-webkit-scrollbar{
+  display:none;
+}
+
+/*============================================================
+ * Desktop media
+ *============================================================
+ */
 @media (min-width: 768px){
+
+  .lg-pad-contain{
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+
+  .md-pad-contain{
+    padding-top:40px;
+    padding-bottom:40px;
+  }
+
+  .sm-pad-contain{
+    padding-top:15px;
+    padding-bottom:15px;
+  }
+
   .navbar-nav {
       float: right;
       margin: 0;
   }
 
   #consumer-header{
-    background-image:url("../img/consumer-home/security1.jpg");
+    background-image:url("../img/consumer-home/security1-dark.jpg");
     background-attachment: fixed;
     background-size: cover;
-    min-height:94vh;
+    min-height:95vh;
     padding:0;
+  }
+
+  #consumer-header h1{
+    font-size:38px;
+    max-width:50%;
+  }
+
+  #consumer-header h3{
+    font-size:30px;
+    max-width:50%;
+  }
+
+  #products{
+    padding:80px;
   }
 
   #about-header{
